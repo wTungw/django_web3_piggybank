@@ -6,7 +6,7 @@ Build a website based on Django to demostrate PiggyBank.sol.
 
 ## Prerequisites
 
-This project was developed by nodejs 16.17.0, npm 8.15.0, python 3.8.10, Django 4.1
+This project was developed by nodejs 16.17.0, npm 8.15.0, python 3.8.10, Django 4.1, web3.js 
 
 - python3.8
 - nodejs
@@ -17,7 +17,7 @@ This project was developed by nodejs 16.17.0, npm 8.15.0, python 3.8.10, Django 
 ```bash
 pip install django
 cd .../dirToYouFolder
-npm install web3
+npm install
 ```
 
 ## Usage
