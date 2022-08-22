@@ -6,7 +6,7 @@ body{
 
 .wrap{
     /* border: 20px solid blue; */
-    margin-inline: 300px;
+    margin-inline: 150px;
 }
 
 .text-h-center{
@@ -55,7 +55,7 @@ body{
 }
 
 input{
-    width: 100px;
+    width: 80%;
     height: 50px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 18px;
