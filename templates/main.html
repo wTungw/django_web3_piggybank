@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PiggyBank</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'main.css' %}">
+    <script language="javascript" type="text/javascript" src="{% static 'node_modules/web3/dist/web3.min.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>    
+</head>
+<body>
+    <div class="wrap" style=" margin-inline: 300px;">
+    {% block content %}
+
+    {% endblock%}
+    </div>
+</body>
+</html>

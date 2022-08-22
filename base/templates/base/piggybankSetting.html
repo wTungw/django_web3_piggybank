@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<h1>
+    Piggy Bank Setting
+</h1>
+
+<!-- <input type="text" id="contract_address_input" name="contract_address_input" size="10" style="width:300px; height:15px;">
+<br>
+<br>
+<input type="button" name="btn_contract_address_input" style="width:30px; height:20px;"> -->
+
+<div>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <label for="contract_address">Contract address:</label><br>
+        <input type="text" id="contract_address" name="contract_address"><br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+
+
+{% endblock content%}

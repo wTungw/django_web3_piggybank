@@ -1,0 +1,76 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content%}
+<h1>
+    <div class="section text-h-center">
+        Piggy Bank
+    </div>
+</h1>
+<hr/>
+<h2>Info</h2>
+<div class="section info-border">
+    <div class="item-left">
+        <p>Address</p>
+        <p>Goal</p>
+        <p>Balance</p>
+        <p>Account</p>
+    </div>
+    <div class="item-right">
+        <p><a id="contract_address" href=""></a></p>
+        <p id = "goal"></p>
+        <p id = "balance"></p>
+        <select id="account_list" onchange="get_account(this.options[this.selectedIndex].value)" style="width: 100%;">
+            <option value="none">Choose your account</option>
+            <option value="Owner">Owner: 0xA2cEc1aC87A2f6c44C950ed598dC1feEbEe67F4E</option>
+            <option value="User1">User1: 0xC8Ba38fe978873DD1164812a91a452C9b31D9544</option>
+            <option value="User2">User2: 0xBe99B79eC36207E812AeE62D32b0fc71Cccf88C9</option>
+        </select>
+    </div>
+    <br/>
+    <!-- <label>Current contract address: </label> -->
+    <!-- <p id = "contract_address">Current contract address: </p> -->
+    <!-- <p id = "etherscan">Check on etherscan: <a id="etherscan_url" href=""></a></p> -->
+</div>
+<h2>Function</h2>
+<div class="section function-border">
+    <div class="inside-border">
+        <div class="item-left">
+            <p>
+                <input type="button" value="take money" name="take_money" style="width: 100px; height:50px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" onclick="take_money()">
+            </p>
+        </div>
+        <div class="item-right">
+            <p>
+                <input type="text" id="take_value" name="take_value" size="10" style="width:100%; height:45px;">
+            </p>
+        </div>
+    </div>
+    <div class="error-msg">
+        <p id = "take_error"></p>
+    </div>
+    <div class="inside-border">
+        <div class="item-left">
+            <div class="button-style">
+                <p>
+                    <input type="button"  value="save money" name="save_money" onclick="save_money()">
+                </p>
+            </div>
+        </div>
+        <div class="item-right">
+            <p>
+                <input type="text" id="save_value" name="save_value" size="10" style="width:100%; height:45px;">
+            </p>
+        </div>
+    </div>
+    <div class="error-msg">
+        <p id = "save_error"></p>
+    </div>
+    <p><input type="button" value="withdraw" name="withdraw" style="width:100%; height:50px;" onclick="withdraw()"></p>
+    <div class="error-msg">
+        <p id = "withdraw_error"></p>
+    </div>
+</div>
+<script src="{% static 'js/piggybank.js' %}"></script>
+
+{% endblock content%}
