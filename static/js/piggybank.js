@@ -70,6 +70,17 @@ function get_account(object) {
             break;
     }
     console.log("address: " + accountUser.address + " is using Piggy Bank")
+    if( accountUser.address != 'none'){
+        web3.eth.getBalance(accountUser.address, (err, balance) => {
+            if(err){
+                console.log(err)
+                document.getElementById("account_balance").innerHTML = "-"
+            }
+            else{
+                document.getElementById("account_balance").innerHTML = balance
+            }
+        });
+    }
 }
 
 
