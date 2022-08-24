@@ -28,6 +28,8 @@ $.getJSON("/static/json/contract_info.json", function(data){
 // window.onload = init()
 // init()
 
+console.log(document.getElementById("piggy_img").src)
+
 function init(){ 
 
     // const contract_address = document.getElementById("contract_address").innerText  
@@ -86,10 +88,22 @@ function get_account(object) {
 
 function get_balance() {
     contract_instance.methods.getMyBalance().call((err,result) => {
-        if(err)
+        if(err){
             document.getElementById("balance").innerHTML = "Contract doesn't exist!"
+            $('.item-img img').attr("src","static/image/piggy_die.png")
+        }
         else{
             document.getElementById("balance").innerHTML = result
+            if(result != 0 && result < parseInt(document.getElementById("goal").innerHTML)){
+                console.log(document.getElementById("piggy_img").src)
+                $('.item-img img').attr("src","static/image/piggy_saving.png")
+            }
+            else if(result != 0 && result >= parseInt(document.getElementById("goal").innerHTML)){
+                $('.item-img img').attr("src","static/image/piggy_explored.png")
+            }
+            else{
+                $('.item-img img').attr("src","static/image/piggy.png")
+            }
         }
     })
 }
